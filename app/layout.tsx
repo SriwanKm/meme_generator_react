@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Lilita_One, Silkscreen, Lexend} from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const lilitaOne = Lilita_One({ subsets: ["latin"], weight: "400", variable: "--font-lilita-one"});
+const silkscreen = Silkscreen({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-silkscreen"});
+const lexend = Lexend({subsets: ["latin"], weight:["400","900"], variable:"--font-lexend"})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+
+      <body className={`${lilitaOne.variable} ${silkscreen.variable} ${lexend.variable}`}>{children}</body>
     </html>
   );
 }
